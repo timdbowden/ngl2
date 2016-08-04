@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { CustomerComponent} from './customer/customer.component'
+import { CustomersComponent} from './customer/customers.component'
+
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    templateUrl: '/app/app.component.html',
-    directives: [CustomerComponent]
+    templateUrl: 'app.component.html',
+    directives: [CustomersComponent]
 })
 export class AppComponent { 
     title = 'Meros Angular 2 App';
@@ -15,11 +17,5 @@ export class AppComponent {
         this.nameColor = this.nameColor === 'red' ? 'green' : 'red';        
     }
 
-    customers = [          
-        {id: 1, name: 'Batman'},
-        {id: 2, name: 'Superman'},
-        {id: 3, name: 'Wonder Woman'},
-        {id: 4, name: 'Flash'},
-        {id: 5, name: 'Aquaman'},
-    ];
+   
 }

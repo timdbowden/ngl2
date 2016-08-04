@@ -9,26 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var customers_component_1 = require('./customer/customers.component');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Meros Angular 2 App';
-        this.name = 'Bruce Wayne';
-        this.nameColor = 'red';
+var customer_component_1 = require('./customer.component');
+var CustomersComponent = (function () {
+    function CustomersComponent() {
+        this.customers = [
+            { id: 1, name: 'Batman' },
+            { id: 2, name: 'Superman' },
+            { id: 3, name: 'Wonder Woman' },
+            { id: 4, name: 'Flash' },
+            { id: 5, name: 'Aquaman' }
+        ];
     }
-    AppComponent.prototype.changeColor = function () {
-        this.nameColor = this.nameColor === 'red' ? 'green' : 'red';
+    CustomersComponent.prototype.ngOnInit = function () {
     };
-    AppComponent = __decorate([
+    CustomersComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html',
-            directives: [customers_component_1.CustomersComponent]
+            selector: 'app-customers',
+            templateUrl: 'customers.component.html',
+            directives: [customer_component_1.CustomerComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CustomersComponent);
+    return CustomersComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CustomersComponent = CustomersComponent;
+//# sourceMappingURL=customers.component.js.map

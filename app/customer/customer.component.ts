@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'my-customer',
-    templateUrl: '/app/customer/customer.component.html'
+    selector: 'app-customer',
+    templateUrl: 'customer.component.html'
 })
 export class CustomerComponent implements OnInit {
     

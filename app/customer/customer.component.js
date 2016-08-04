@@ -20,8 +20,8 @@ var CustomerComponent = (function () {
     CustomerComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-customer',
-            templateUrl: '/app/customer/customer.component.html'
+            selector: 'app-customer',
+            templateUrl: 'customer.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], CustomerComponent);
