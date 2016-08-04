@@ -2,3 +2,10 @@
 <div [style.color]='nameColor'>Hello {{name}}</div>
 <button (click)='changeColor()'>Change Color</button>
 <input type="text" [(ngModel)]='name'/>
+<br />
+
+<ul>
+    <li *ngFor="let customer of customers">
+        <my-customer [customer]='customer'></my-customer>
+    </li>
+</ul>
