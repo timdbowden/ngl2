@@ -10,26 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var customer_component_1 = require('./customer.component');
+var customer_service_1 = require('./customer.service');
 var CustomersComponent = (function () {
-    function CustomersComponent() {
-        this.customers = [
-            { id: 1, name: 'Batman' },
-            { id: 2, name: 'Superman' },
-            { id: 3, name: 'Wonder Woman' },
-            { id: 4, name: 'Flash' },
-            { id: 5, name: 'Aquaman' }
-        ];
+    function CustomersComponent(_customerService) {
+        this._customerService = _customerService;
     }
     CustomersComponent.prototype.ngOnInit = function () {
+        this.customers = this._customerService.getCustomers();
     };
     CustomersComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'app-customers',
             templateUrl: 'customers.component.html',
-            directives: [customer_component_1.CustomerComponent]
+            directives: [customer_component_1.CustomerComponent],
+            providers: [customer_service_1.CustomerService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [customer_service_1.CustomerService])
     ], CustomersComponent);
     return CustomersComponent;
 }());
