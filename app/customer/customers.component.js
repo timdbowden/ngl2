@@ -23,7 +23,7 @@ var CustomersComponent = (function () {
             moduleId: module.id,
             selector: 'app-customers',
             templateUrl: 'customers.component.html',
-            directives: [customer_component_1.CustomerComponent],
+            directives: [customer_component_1.CustomerComponent,],
             providers: [customer_service_1.CustomerService]
         }), 
         __metadata('design:paramtypes', [customer_service_1.CustomerService])

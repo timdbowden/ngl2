@@ -21,7 +21,8 @@ var CustomerComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'app-customer',
-            templateUrl: 'customer.component.html'
+            templateUrl: 'customer.component.html',
+            styleUrls: ['customer.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], CustomerComponent);

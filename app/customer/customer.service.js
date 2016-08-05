@@ -9,21 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/add/operators/map');
+var URL_CUSTOMER = 'app/customers.json';
 var CustomerService = (function () {
-    function CustomerService() {
+    function CustomerService(_http) {
+        this._http = _http;
     }
     CustomerService.prototype.getCustomers = function () {
-        return [
-            { id: 1, name: 'Batman' },
-            { id: 2, name: 'Superman' },
-            { id: 3, name: 'Wonder Woman' },
-            { id: 4, name: 'Flash' },
-            { id: 5, name: 'Aquaman' }
-        ];
+        return this._http.get(URL_CUSTOMER).map(function (response) { return response.json; });
     };
     CustomerService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], CustomerService);
     return CustomerService;
 }());
