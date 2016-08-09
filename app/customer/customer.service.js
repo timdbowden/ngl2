@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/add/operators/map');
+require('rxjs/add/operator/map');
 var URL_CUSTOMER = 'app/customers.json';
 var CustomerService = (function () {
     function CustomerService(_http) {
         this._http = _http;
     }
     CustomerService.prototype.getCustomers = function () {
-        return this._http.get(URL_CUSTOMER).map(function (response) { return response.json; });
+        return this._http.get(URL_CUSTOMER).map(function (response) { return response.json(); });
     };
     CustomerService = __decorate([
         core_1.Injectable(), 
