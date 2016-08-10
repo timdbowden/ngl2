@@ -1,7 +1,15 @@
-<h1>{{title}}</h1>
-<div [style.color]='nameColor'>Hello {{name}}</div>
-<button (click)='changeColor()'>Change Color</button>
-<input type="text" [(ngModel)]='name'/>
-<br />
-
-<app-customers></app-customers>
+<h1>My Mail App</h1>
+<button (click)="login()" *ngIf="!isAuthenticated">Sign-in with Office 365</button>
+<img [src]="photoUrl" />
+<table *ngIf="isAuthenticated">
+    <tr>
+        <th>Sender</th>
+        <th>Subject</th>
+        <th>Date</th>
+    </tr>
+    <tr *ngFor="#msg of messages">
+        <td>{{msg.sender.emailAddress.address}}</td>
+        <td>{{msg.subject}}</td>
+        <td>{{msg.receivedDateTime}}</td>
+    </tr>
+</table>

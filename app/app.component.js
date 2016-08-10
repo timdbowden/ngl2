@@ -11,14 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var customers_component_1 = require('./customer/customers.component');
+var kurve = require('kurvejs');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Meros Angular 2 App';
         this.name = 'Bruce Wayne';
         this.nameColor = 'red';
+        this.isAuthenticated = false;
     }
     AppComponent.prototype.changeColor = function () {
         this.nameColor = this.nameColor === 'red' ? 'green' : 'red';
+    };
+    AppComponent.prototype.login = function () {
+        var _this = this;
+        var id = new kurve.Identity('78a8a7f4-2541-4a0b-8b51-128bfd35034d', 'http://localhost:3000/node_modules/kurvejs/dist/login.html', {
+            endpointVersion: kurve.EndpointVersion.v1
+        });
+        id.loginAsync().then(function (_) {
+            _this.isAuthenticated = true;
+            var graph = new kurve.Graph(id);
+            _this.user = graph.me;
+            graph.me.photo.GetPhotoImage().then(function (result) {
+                _this.photoUrl = result;
+                console.log(result);
+            });
+            graph.me.messages.GetMessages().then(function (data) {
+                _this.messages = data.value;
+                console.log(_this.messages);
+            });
+        });
     };
     AppComponent = __decorate([
         core_1.Component({
