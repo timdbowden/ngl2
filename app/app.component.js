@@ -39,6 +39,10 @@ var AppComponent = (function () {
                 _this.messages = data.value;
                 console.log(_this.messages);
             });
+            graph.me.calendarView.GetEvents().then(function (result) {
+                _this.calendar = graph.me.calendarView;
+                console.log(_this.calendar);
+            });
         });
     };
     AppComponent = __decorate([

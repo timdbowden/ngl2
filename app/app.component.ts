@@ -20,6 +20,7 @@ export class AppComponent {
     messages : kurve.MessageDataModel[];
     user:kurve.UserDataModel;
     photoUrl: string; 
+    calendar: kurve.CalendarView;
 
     changeColor() {
         this.nameColor = this.nameColor === 'red' ? 'green' : 'red';        
@@ -47,6 +48,11 @@ export class AppComponent {
                 this.messages = data.value;
                 console.log(this.messages)
             });
+
+            graph.me.calendarView.GetEvents().then(result=>{
+                this.calendar = graph.me.calendarView;
+                console.log(this.calendar);
+            })
         })
     }
 
