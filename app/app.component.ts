@@ -47,12 +47,16 @@ export class AppComponent {
             graph.me.messages.GetMessages().then( data =>{
                 this.messages = data.value;
                 console.log(this.messages)
+            }, err=>{
+                alert(err.statusText);
             });
 
-            graph.me.calendarView.GetEvents().then(result=>{
+            /*graph.me.calendarView.GetEvents().then(result=>{
                 this.calendar = graph.me.calendarView;
                 console.log(this.calendar);
-            })
+            }, err=>{
+                alert(err.statusText);
+            });*/
         })
     }
 

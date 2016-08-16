@@ -38,11 +38,15 @@ var AppComponent = (function () {
             graph.me.messages.GetMessages().then(function (data) {
                 _this.messages = data.value;
                 console.log(_this.messages);
+            }, function (err) {
+                alert(err.statusText);
             });
-            graph.me.calendarView.GetEvents().then(function (result) {
-                _this.calendar = graph.me.calendarView;
-                console.log(_this.calendar);
-            });
+            /*graph.me.calendarView.GetEvents().then(result=>{
+                this.calendar = graph.me.calendarView;
+                console.log(this.calendar);
+            }, err=>{
+                alert(err.statusText);
+            });*/
         });
     };
     AppComponent = __decorate([
