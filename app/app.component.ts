@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
+import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
+
 import { CustomersComponent } from './customer/customers.component';
 import kurve = require('kurvejs');
 
